@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using AutoItX3Lib;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using Pj.Library;
 using TechTalk.SpecFlow;
 
 namespace Plan_Design.Steps
@@ -15,6 +17,7 @@ namespace Plan_Design.Steps
         int flag;
         SETUP setup = new SETUP();
         AutoItX3 autoIt = new AutoItX3();
+        
         [Given(@"User Should be on Home Page-as display label ""(.*)""")]
         public void GivenUserShouldBeOnHomePage_AsDisplayLabel(string dashboard)
         {
@@ -57,25 +60,19 @@ namespace Plan_Design.Steps
         
         public void ThenTheListOfSearchItemWillAppear()
         {
-            string values = CustomControlGets.Gettextfromdropdown(PageObjects.Login_Screen(82), "XPath");
-            /* IList<string> items = new IReadOnlyList<ValueSourceAttribute>();
-             Console.WriteLine(values.ToUpper());
-            string  VAL=PropertiesCollection.ngdriver.FindElement(By.XPath(PageObjects.Login_Screen(82))).GetAttribute("value");
-            SelectElement ss = new SelectElement(PropertiesCollection.ngdriver.FindElement(By.XPath("(//ul[@class='dropdown-menu'])[1])")));
-            Console.WriteLine(ss.Options);
-            foreach (IWebElement element in ss.Options)
-            {
-                Console.WriteLine(element.Text);
-            }*/
-
+            CustomControls.Wait();
+            Console.WriteLine("List of drop down items are :");
+            ListOfItems.Items();
 
         }
-
+         
         [When(@"User Clicks Link Document search")]
         public void WhenUserClicksLinkDocumentSearch()
         {
-            CustomControls.Wait();
-            CustomControls.click(PageObjects.Login_Screen(43), propertytype.XPath);
+            CustomControls.Wait();           
+            CustomControls.click(PageObjects.Login_Screen(43), propertytype.XPath);                  
+
+
         }
         [Then(@"User should be on document search page-as display label Document Search")]
         public void ThenUserShouldBeOnDocumentSearchPage_AsDisplayLabelDocumentSearch()

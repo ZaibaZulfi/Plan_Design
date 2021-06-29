@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using AutoItX3Lib;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using TechTalk.SpecFlow;
+using Xceed.Wpf.Toolkit;
 
 namespace Plan_Design.Steps
 {
@@ -51,13 +53,15 @@ namespace Plan_Design.Steps
             CustomControls.Wait();
             CustomControls.click(PageObjects.Login_Screen(32), propertytype.XPath);
         }
-/*
         [Then(@"the list of report items will appear")]
         public void ThenTheListOfReportItemsWillAppear()
         {
             CustomControls.Wait();
-            CustomControls.click(PageObjects.Login_Screen(84), propertytype.XPath);
-        }*/
+            Console.WriteLine("List of drop down items are :");
+            ListOfItems.Items();
+                  
+        }
+     
 
         [When(@"user clicks link MGU Upload Log")]
         public void WhenUserClicksLinkMGUUploadLog()

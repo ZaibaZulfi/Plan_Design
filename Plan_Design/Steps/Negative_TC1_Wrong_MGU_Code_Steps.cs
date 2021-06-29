@@ -17,6 +17,7 @@ namespace Plan_Design.Steps
         int flag;
         SETUP setup = new SETUP();
         AutoItX3 autoIt = new AutoItX3();
+       
         [Given(@"user Should be on home page-as display label ""(.*)""")]
         public void GivenUserShouldBeOnHomePage_AsDisplayLabel(string dashboard)
         {
@@ -58,29 +59,8 @@ namespace Plan_Design.Steps
         [Then(@"the list of search item will appear")]
         public void ThenTheListOfSearchItemWillAppear()
         {
-            string values = CustomControlGets.Gettextfromdropdown(PageObjects.Login_Screen(82), "XPath");
-            Console.WriteLine(values);
-            /*Select select = new Select(values);
-            List<string> li = new List<>;
-            foreach (IWebElement ele in values)
-            {
-                Console.WriteLine(ele);
-            }
-          IList<IWebElement>  elements = (IList<IWebElement>)PropertiesCollection.ngdriver.FindElement(By.XPath("(//ul[@class='dropdown-menu']/li)"));
-            SelectElement selectElement = new SelectElement((IWebElement)elements);
-            elements = selectElement.Options;
-            Console.WriteLine(elements.Count);
-            foreach (var items in elements)
-            {
-                Console.Write(items.Text);
-            }
-
-            //Select select = new Select(selectElement);
-            /*string[] items = { "Account Search", "Agency Search", "TPA Search" }; 
-            foreach(string s in selectElement)
-            {
-                Console.WriteLine(s);
-            }*/
+            CustomControls.Wait();
+            ListOfItems.Items();
 
 
         }

@@ -5,7 +5,7 @@
 Scenario:MGU Upload Log   
 Given User Should be on Home Page-as Display label "Dashboard" 
 When user clicks link Reports.
-#Then the list of report items will appear
+Then the list of report items will appear
 When user clicks link MGU Upload Log 
 Then user should be on MGU Upload Log as display label- MGU Upload Log
 And user selects MGU code from the MGU code drop down field

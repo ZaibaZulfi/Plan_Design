@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using AutoItX3Lib;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -12,6 +13,7 @@ namespace Plan_Design.Steps
         int flag;
         SETUP setup = new SETUP();
         AutoItX3 autoIt = new AutoItX3();
+        
         [Given(@"User Should be on Home page-as display label ""(.*)""")]
         public void GivenUserShouldBeOnHomePage_AsDisplayLabel(string dashboard)
         {
@@ -53,7 +55,9 @@ namespace Plan_Design.Steps
         [Then(@"The List of search item will appear")]
         public void ThenTheListOfSearchItemWillAppear()
         {
-            CustomControlGets.Gettextfromdropdown(PageObjects.Login_Screen(82), "XPath");
+            CustomControls.Wait();
+            Console.WriteLine("List of drop down items are :");
+            ListOfItems.Items();
         }
 
         [When(@"User Clicks link Document search")]

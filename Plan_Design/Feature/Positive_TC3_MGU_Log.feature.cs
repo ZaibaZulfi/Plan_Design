@@ -108,6 +108,9 @@ testRunner.Given("User Should be on Home Page-as Display label \"Dashboard\"", (
 #line 7
 testRunner.When("user clicks link Reports.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
+#line 8
+testRunner.Then("the list of report items will appear", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
 #line 9
 testRunner.When("user clicks link MGU Upload Log", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
